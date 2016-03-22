@@ -47,14 +47,12 @@ chsec takes the following parameters:
 
 ## Usage
 
-'''
-chsec { "minage":
+`chsec { "minage":
   ensure => present,
   value => '2',
   file  => '/etc/security/user',
   stanza => 'default'
-}
-'''
+}`
 
 This will check the 'minage' attribue of the 'default' stanza in the '/etc/security/user'
 file and if it is not present or not set to '2', change it to be '2'.
@@ -90,6 +88,6 @@ Puppet releases.
 
 If you've got a better way to do things, please feel free to make merge requests.
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes/Contributors/Etc.
 
 I hope someone else out there finds this useful.
