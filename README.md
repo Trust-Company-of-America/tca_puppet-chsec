@@ -40,18 +40,19 @@ Add the module to your modules path and let pluginsync do the rest.
 
 chsec takes the following parameters:
 
-* name: This is the name of the attribute, ie. "minage" in /etc/security/user.
+* attribute: This is the name of the attribute, ie. "minage" in /etc/security/user.
 * value: This is the value the attribute should be set to.
 * file: This is the file that the attribute lives in.
 * stanza:  This is the stanza the value should be set for.
 
 ## Usage
 
-`chsec { "minage":
-  ensure => present,
-  value => '2',
-  file  => '/etc/security/user',
-  stanza => 'default'
+`chsec { "default_minage":
+  ensure    => present,
+  attribute => 'minage',
+  value     => '2',
+  file      => '/etc/security/user',
+  stanza    => 'default'
 }`
 
 This will check the 'minage' attribue of the 'default' stanza in the '/etc/security/user'
@@ -68,7 +69,7 @@ Public Type
 * chsec
 
 Parameters
-* name: This is the name of the attribute, ie. "minage" in /etc/security/user.
+* attribute: This is the thing to change, ie. "minage" in /etc/security/user.
 * value: This is the value the attribute should be set to.
 * file: This is the file that the attribute lives in.
 * stanza:  This is the stanza the value should be set for.
@@ -76,9 +77,10 @@ Parameters
 
 ## Limitations
 
-This was written for AIX.  Other OS' have other ways to do the same things, I wanted
+This was written for AIX.  Other OS' have other ways to do the same thing, I wanted
 one that worked with AIX's standard commands for manipulating entries in security
-files.
+files. This should work for any file that the AIX 'chsec' command will work with.  
+See the AIX 'chsec' man page for a listing.
 
 This version has been deployed on PE 2015.3.3.  An internally produced version ran on 
 3.7, but was never released to the forge.  This version hasn't been tested on the older
