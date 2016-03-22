@@ -1,17 +1,42 @@
 require 'puppet'
 require 'puppet/type/chsec'
+require 'spec_helper'
 
-#RSpec.configure { |config| config.mock_framework = :mocha }
+# Really should test this... But I'm not sure
+# how to test it when using non-aix machines to write
+# the code since the provider uses AIX specific commands. 
+provider_class = Puppet::Type.type(:chsec).provider(:aix)
+describe provider_class do
 
-#describe 'The aix provider for aix_secfil type' do
+  let(:tmpfile) { tmpfilename("chsec_test_file") }
+  let(:chsec_params) {{
+    :title => 'test_root_file',
+    :path => tmpfile,
+    :section => 'root',
+    :setting => 'fsize',
+    :value => '-1',
+  }}
 
-  this_name = "maxage"
-  this_value = "3"
-  this_file = "/etc/security/user"
-  this_stanza = "default"
-#  let(:resource) { Puppet::Type::Aix_secfile.new({:name => this_name, :value => this_value, :file => this_file, :stanza => this_stanza, :ensure => :present}) }
-#  subject { Puppet::Type.type(:chsec).provider(:aix).new(resource) }
+  def validate_file(expected_content, tmpfile = tmpfile)
+    File.read(tmpfile).should == expected_content
+  end
 
-#end
 
-testsec = double( this_name, :value => this_value, :file => this_file, :stanza => this_stanza )
+  before :each do
+    File.open(tmpfile, 'w') do |fh|
+      fh.write("")
+    end
+  end
+
+  it "should add a new stanza for root with an fsize setting" do
+    provider = described_class.new(resource)
+    provider.exists?.should be false
+    provider.create
+    validate_file(<<-EOS
+root:
+  fsize = -1
+EOS
+)
+  end
+
+end
