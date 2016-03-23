@@ -5,11 +5,13 @@
   "summary": "Change setting in AIX security files.",
   "license": "Apache-2.0",
   "source": "https://github.com/bwilcox/chsec.git",
-  "project_page": null,
-  "issues_url": null,
+  "project_page": "https://github.com/bwilcox/chsec.git",
+  "issues_url": "https://github.com/bwilcox/chsec.git/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ],
-  "data_provider": null
+  "data_provider": null,
+  "operatingsystem_support": "AIX"
+
 }
 
