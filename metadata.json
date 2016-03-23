@@ -14,13 +14,13 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "AIX",
-      "operatingsystemrelase": [
+      "operatingsystemrelease": [
         "6.1",
         "7.1"
       ]
     }
   ],
-  "description": "Manage security files on AIX with chsec",
+  "description": "Manage security files on AIX with chsec"
 
 }
 
