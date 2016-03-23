@@ -11,7 +11,7 @@
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ],
   "data_provider": null,
-  "operatingsystem_support": "AIX"
+  "operatingsystem_support": ["AIX"]
 
 }
 
