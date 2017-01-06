@@ -1,6 +1,6 @@
 {
   "name": "bwilcox-chsec",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "bwilcox",
   "summary": "Change setting in AIX security files.",
   "license": "Apache-2.0",
