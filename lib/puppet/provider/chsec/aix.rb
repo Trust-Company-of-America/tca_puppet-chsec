@@ -24,7 +24,7 @@ Puppet::Type.type(:chsec).provide(:aix) do
     begin
       command = lssec('-f', resource[:file], '-s', resource[:stanza], '-a', resource[:attribute])
 
-    if command.split.last.split("=")[1..-1].join('=').strip != resource[:value]
+    if command[/="?(.+?)"?$/, 1] != resource[:value]
       return false
     else
       return true
