@@ -1,5 +1,13 @@
 # chsec
 
+[![Build Status](https://travis-ci.org/LarkIT/puppetmodule-chsec.svg?branch=master)](https://travis-ci.org/LarkIT/puppetmodule-chsec)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/larkit/chsec.svg)](https://forge.puppet.com/larkit/chsec)
+[![Puppet Forge](https://img.shields.io/puppetforge/dt/larkit/chsec.svg)](https://forge.puppet.com/larkit/chsec)
+[![Puppet Forge](https://img.shields.io/puppetforge/e/larkit/chsec.svg)](https://forge.puppet.com/larkit/chsec)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/larkit/chsec.svg)](https://forge.puppet.com/larkit/chsec)
+
+* Source: https://github.com/LarkIT/puppetmodule-chsec
+
 #### Table of Contents
 
 1. [Description](#description)
